@@ -10,6 +10,7 @@ namespace PM.EF
     {
         #region Fields
         protected string name;
+        protected string description;
         #endregion
 
         #region Constructors
@@ -27,11 +28,34 @@ namespace PM.EF
             {
                 if (value is null)
                 {
-                    throw new ArgumentNullException();
+                    throw new ArgumentNullException("The name must be set");
+                }
+                if (value.Length > 50 || value.Length < 2)
+                {
+                    throw new ArgumentOutOfRangeException("The name must be over 2 chars");
                 }
                 name = value;
             }
+        }
 
+        public string Description
+        {
+            get
+            {
+                return description;
+            }
+            set
+            {
+                if (value is null)
+                {
+                    throw new ArgumentNullException("The description  must be set");
+                }
+                if (value.Length < 2)
+                {
+                    throw new ArgumentOutOfRangeException("The description must be over 2 chars");
+                }
+                description = value;
+            }
         }
         #endregion
     }
