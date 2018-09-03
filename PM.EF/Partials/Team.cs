@@ -25,7 +25,7 @@ namespace PM.EF
         }
         #endregion
         #region Properties
-        public string Name
+        public virtual string Name
         {
             get
             {
@@ -44,7 +44,7 @@ namespace PM.EF
                 name = value;
             }
         }
-        public ICollection<Employee> Employees
+        public virtual ICollection<Employee> Employees
         {
             get
             {

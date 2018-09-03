@@ -20,7 +20,7 @@ namespace PM.EF
         }
         #endregion
         #region Properties
-        public string Email
+        public virtual string Email
         {
             get
             {
@@ -52,7 +52,7 @@ namespace PM.EF
                 email = value;
             }
         }
-        public string Phone
+        public virtual string Phone
         {
             get
             {

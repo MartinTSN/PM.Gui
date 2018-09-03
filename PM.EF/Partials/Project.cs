@@ -29,7 +29,7 @@ namespace PM.EF
         #endregion
 
         #region Properties
-        public string Name
+        public virtual string Name
         {
             get
             {
@@ -48,7 +48,7 @@ namespace PM.EF
                 name = value;
             }
         }
-        public string Description
+        public virtual string Description
         {
             get
             {
@@ -67,7 +67,7 @@ namespace PM.EF
                 description = value;
             }
         }
-        public ICollection<Team> Teams
+        public virtual ICollection<Team> Teams
         {
             get
             {
