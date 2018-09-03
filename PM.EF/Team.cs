@@ -25,6 +25,6 @@ namespace PM.EF
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         //   public virtual ICollection<Employee> Employees { get; set; }
-        // public virtual Project Project { get; set; }
+         public virtual Project Project { get; set; }
     }
 }

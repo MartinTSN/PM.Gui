@@ -11,10 +11,18 @@ namespace PM.EF
         #region Fields
         protected string name;
         protected ICollection<Employee> employees;
-        protected Project project;
         #endregion
         #region Constructors
+        public Team(string name)
+            : this(name, new List<Employee>(0))
+        {
 
+        }
+        public Team(string name, ICollection<Employee> employees)
+        {
+            Name = name;
+            Employees = employees;
+        }
         #endregion
         #region Properties
         public string Name
@@ -49,21 +57,6 @@ namespace PM.EF
                     throw new ArgumentNullException("The employees must be set");
                 }
                 employees = value.ToList();
-            }
-        }
-        public Project Project
-        {
-            get
-            {
-                return project;
-            }
-            set
-            {
-                if (value is null)
-                {
-                    throw new ArgumentNullException("The project must be set");
-                }
-                project = value;
             }
         }
         #endregion

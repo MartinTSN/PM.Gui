@@ -15,7 +15,17 @@ namespace PM.EF
         #endregion
 
         #region Constructors
+        public Project(string name, string description)
+            : this(name, description, new List<Team>(0))
+        {
 
+        }
+        public Project(string name, string description, List<Team> teams)
+        {
+            Name = name;
+            Description = description;
+            Teams = Teams;
+        }
         #endregion
 
         #region Properties
@@ -38,7 +48,6 @@ namespace PM.EF
                 name = value;
             }
         }
-
         public string Description
         {
             get
