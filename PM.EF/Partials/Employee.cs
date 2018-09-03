@@ -62,7 +62,7 @@ namespace PM.EF
             {
                 if (value is null)
                 {
-                    throw new ArgumentNullException("The team must not be null");
+                    throw new ArgumentNullException("The team must be set");
                 }
                 team = value;
             }
