@@ -14,6 +14,7 @@ namespace PM.Gui
         public MainWindow()
         {
             InitializeComponent();
+            dataGridContactInfo.ItemsSource = model.Projects.ToList();
         }
 
         private void buttonSave_Click(object sender, RoutedEventArgs e)
@@ -34,6 +35,7 @@ namespace PM.Gui
                 MessageBox.Show("The name and description must be within allowed parameters. " + ex.Message);
                 throw;
             }
+
             try
             {
                 model.Projects.Add(project);
