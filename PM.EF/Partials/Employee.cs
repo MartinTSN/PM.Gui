@@ -14,7 +14,17 @@ namespace PM.EF
         protected Team team;
         #endregion
         #region Constructors
-
+        public Employee(int id, string name, ICollection<ContactInfo> contactInfos, Team team)
+            : this(name, contactInfos, team)
+        {
+            Id = id;
+        }
+        public Employee(string name, ICollection<ContactInfo> contactInfos, Team team)
+        {
+            Name = name;
+            ContactInfos = contactInfos;
+            Team = team;
+        }
         #endregion
         #region Properties
         public string Name
@@ -51,7 +61,6 @@ namespace PM.EF
                 contactInfos = value.ToList();
             }
         }
-
         public Team Team
         {
             get
