@@ -10,6 +10,8 @@ namespace PM.EF
     {
         #region Fields
         protected string name;
+        protected ICollection<ContactInfo> contactInfos;
+        protected Team team;
         #endregion
         #region Constructors
 
@@ -32,6 +34,37 @@ namespace PM.EF
                     throw new ArgumentOutOfRangeException("The name must be over 2 chars and under 100");
                 }
                 name = value;
+            }
+        }
+        public ICollection<ContactInfo> ContactInfos
+        {
+            get
+            {
+                return contactInfos;
+            }
+            set
+            {
+                if (value is null)
+                {
+                    throw new ArgumentNullException("The contactInfo must not be null");
+                }
+                contactInfos = value.ToList();
+            }
+        }
+
+        public Team Team
+        {
+            get
+            {
+                return team;
+            }
+            set
+            {
+                if (value is null)
+                {
+                    throw new ArgumentNullException("The team must not be null");
+                }
+                team = value;
             }
         }
         #endregion
