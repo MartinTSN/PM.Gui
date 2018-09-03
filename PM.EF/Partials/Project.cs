@@ -16,7 +16,7 @@ namespace PM.EF
 
         #region Constructors
         public Project(string name, string description)
-            : this(name, description, new List<Team>(0))
+            : this(name, description, null)
         {
 
         }
@@ -79,7 +79,7 @@ namespace PM.EF
                 {
                     throw new ArgumentNullException("the team must be set");
                 }
-                teams = value.ToList();
+                teams = value ?? new List<Team>(0);
             }
         }
         #endregion
