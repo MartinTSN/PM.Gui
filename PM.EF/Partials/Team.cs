@@ -27,10 +27,7 @@ namespace PM.EF
         #region Properties
         public virtual string Name
         {
-            get
-            {
-                return name;
-            }
+            get => name;
             set
             {
                 if (value is null)
@@ -46,10 +43,7 @@ namespace PM.EF
         }
         public virtual ICollection<Employee> Employees
         {
-            get
-            {
-                return employees;
-            }
+            get => employees;
             set
             {
                 if (value is null)
