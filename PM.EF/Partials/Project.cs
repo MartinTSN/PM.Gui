@@ -32,7 +32,7 @@ namespace PM.EF
                 }
                 if (value.Length > 50 || value.Length < 2)
                 {
-                    throw new ArgumentOutOfRangeException("The name must be over 2 chars");
+                    throw new ArgumentOutOfRangeException("The name must be over 2 chars and under 50");
                 }
                 name = value;
             }
