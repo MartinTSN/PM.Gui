@@ -19,10 +19,50 @@ namespace PM.Gui
         private void buttonSave_Click(object sender, RoutedEventArgs e)
         {
             Project project = new Project();
-            project.Name = textBoxProjectName.Text;
-            project.Description = textBoxDescription.Text;
-            model.Projects.Add(project);
-            model.SaveChanges();
+            try
+            {
+                project.Name = textBoxProjectName.Text;
+                project.Description = textBoxDescription.Text;
+            }
+            catch (ArgumentNullException ex)
+            {
+                MessageBox.Show("You must Write a name and a Description. " + ex.Message);
+                throw;
+            }
+            catch (ArgumentOutOfRangeException ex)
+            {
+                MessageBox.Show("The name and description must be within allowed parameters. " + ex.Message);
+                throw;
+            }
+            try
+            {
+                model.Projects.Add(project);
+            }
+            catch (ArgumentNullException ex)
+            {
+                MessageBox.Show("You must Write a name and a Description. " + ex.Message);
+                throw;
+            }
+            catch (ArgumentOutOfRangeException ex)
+            {
+                MessageBox.Show("The name and description must be within allowed parameters. " + ex.Message);
+                throw;
+            }
+
+            try
+            {
+                model.SaveChanges();
+            }
+            catch (ArgumentNullException ex)
+            {
+                MessageBox.Show("You must Write a name and a Description. " + ex.Message);
+                throw;
+            }
+            catch (ArgumentOutOfRangeException ex)
+            {
+                MessageBox.Show("The name and description must be within allowed parameters. " + ex.Message);
+                throw;
+            }
             dataGridContactInfo.ItemsSource = model.Projects.ToList();
         }
     }
