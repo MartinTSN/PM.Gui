@@ -14,11 +14,6 @@ namespace PM.EF
         protected Employee employee;
         #endregion
         #region Constructors
-        public ContactInfo(int id, string email, string phone, Employee employee)
-            : this(email, phone, employee)
-        {
-            Id = id;
-        }
         public ContactInfo(string email, string phone, Employee employee)
         {
             Email = email;

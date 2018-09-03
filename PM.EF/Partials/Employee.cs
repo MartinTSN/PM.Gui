@@ -11,23 +11,20 @@ namespace PM.EF
         #region Fields
         protected string name;
         protected ICollection<ContactInfo> contactInfos;
-        protected Team team;
         #endregion
         #region Constructors
-        public Employee(int id, string name, ICollection<ContactInfo> contactInfos, Team team)
-            : this(name, contactInfos, team)
+        public Employee(string name)
+            : this(name, new List<ContactInfo>(0))
         {
-            Id = id;
         }
-        public Employee(string name, ICollection<ContactInfo> contactInfos, Team team)
+        public Employee(string name, ICollection<ContactInfo> contactInfos)
         {
             Name = name;
             ContactInfos = contactInfos;
-            Team = team;
         }
         #endregion
         #region Properties
-        public string Name
+        public virtual string Name
         {
             get
             {
@@ -46,7 +43,7 @@ namespace PM.EF
                 name = value;
             }
         }
-        public ICollection<ContactInfo> ContactInfos
+        public virtual ICollection<ContactInfo> ContactInfos
         {
             get
             {
@@ -59,21 +56,6 @@ namespace PM.EF
                     throw new ArgumentNullException("The contactInfo must not be null");
                 }
                 contactInfos = value.ToList();
-            }
-        }
-        public Team Team
-        {
-            get
-            {
-                return team;
-            }
-            set
-            {
-                if (value is null)
-                {
-                    throw new ArgumentNullException("The team must be set");
-                }
-                team = value;
             }
         }
         #endregion
