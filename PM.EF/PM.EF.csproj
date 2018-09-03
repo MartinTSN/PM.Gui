@@ -74,6 +74,7 @@
     <Compile Include="Partials\ContactInfo.cs" />
     <Compile Include="Partials\Employee.cs" />
     <Compile Include="Partials\Project.cs" />
+    <Compile Include="Partials\Team.cs" />
     <Compile Include="Project.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
