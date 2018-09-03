@@ -63,6 +63,7 @@ namespace PM.EF
                 {
                     throw new ArgumentNullException("The project must be set");
                 }
+                project = value;
             }
         }
         #endregion
