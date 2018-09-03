@@ -11,6 +11,7 @@ namespace PM.EF
         #region Fields
         protected string email;
         protected string phone;
+        protected Employee employee;
         #endregion
         #region Constructors
 
@@ -65,6 +66,21 @@ namespace PM.EF
                     throw new ArgumentOutOfRangeException("The number must be under 25 and over 8");
                 }
                 phone = value;
+            }
+        }
+        public Employee Employee
+        {
+            get
+            {
+                return employee;
+            }
+            set
+            {
+                if (value is null)
+                {
+                    throw new ArgumentNullException("The employee must be set");
+                }
+                employee = value;
             }
         }
         #endregion
