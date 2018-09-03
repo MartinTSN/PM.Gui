@@ -11,6 +11,7 @@ namespace PM.EF
         #region Fields
         protected string name;
         protected string description;
+        protected ICollection<Team> teams;
         #endregion
 
         #region Constructors
@@ -55,6 +56,21 @@ namespace PM.EF
                     throw new ArgumentOutOfRangeException("The description must be over 2 chars");
                 }
                 description = value;
+            }
+        }
+        public ICollection<Team> Teams
+        {
+            get
+            {
+                return teams;
+            }
+            set
+            {
+                if (value is null)
+                {
+                    throw new ArgumentNullException("the team must be set");
+                }
+                teams = value.ToList();
             }
         }
         #endregion
