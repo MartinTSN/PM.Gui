@@ -4,17 +4,14 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="88b4ca2311da4e2ab594e40e34216627" Name="Diagram1" ZoomLevel="127">
-        <EntityTypeShape EntityType="ProjectManagementDBModel.ContactInfo" Width="1.5" PointX="7.5" PointY="1" IsExpanded="true" />
-        <EntityTypeShape EntityType="ProjectManagementDBModel.Employee" Width="1.5" PointX="5.25" PointY="0.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="ProjectManagementDBModel.Project" Width="1.5" PointX="0.75" PointY="1" IsExpanded="true" />
-        <EntityTypeShape EntityType="ProjectManagementDBModel.Team" Width="1.5" PointX="3" PointY="0.875" IsExpanded="true" />
-        <AssociationConnector Association="ProjectManagementDBModel.ContactInfos_Employee_FK" ManuallyRouted="true" >
-          <ConnectorPoint PointX="6.75" PointY="2.101176639874287" />
-          <ConnectorPoint PointX="7.5" PointY="2.1105217571086712" />
-        </AssociationConnector>
-        <AssociationConnector Association="ProjectManagementDBModel.Employee_Teams_FK" ManuallyRouted="false" />
+      <Diagram DiagramId="ab2ab23d296d401cb72e1e50079ada19" Name="Diagram1">
+        <EntityTypeShape EntityType="ProjectManagementDBModel.ContactInfo" Width="1.5" PointX="10.625" PointY="2.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProjectManagementDBModel.Employee" Width="1.5" PointX="8.25" PointY="2.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProjectManagementDBModel.Project" Width="1.5" PointX="3.125" PointY="3" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProjectManagementDBModel.Team" Width="1.5" PointX="5.625" PointY="2.875" IsExpanded="true" />
+        <AssociationConnector Association="ProjectManagementDBModel.ContactInfos_Employee_FK" ManuallyRouted="false" />
         <AssociationConnector Association="ProjectManagementDBModel.Teams_Projects_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="ProjectManagementDBModel.TeamEmployee" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

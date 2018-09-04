@@ -83,7 +83,7 @@ namespace PM.EF
                 {
                     throw new ArgumentNullException("The employees must be set");
                 }
-                employees = value.ToList();
+                employees = value;
             }
         }
         #endregion
