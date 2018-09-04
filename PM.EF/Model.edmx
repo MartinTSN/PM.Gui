@@ -4,42 +4,42 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="ProjectManagementDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl" Alias="Self" Namespace="ProjectManagementDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012">
         <EntityType Name="ContactInfos">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Email" Type="nvarchar" MaxLength="50" />
-          <Property Name="Phone" Type="nvarchar" MaxLength="25" />
+          <Property Name="Id" Nullable="false" StoreGeneratedPattern="Identity" Type="int" />
+          <Property Name="Email" MaxLength="50" Type="nvarchar" />
+          <Property Name="Phone" MaxLength="25" Type="nvarchar" />
         </EntityType>
         <EntityType Name="Employees">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Name" Type="nvarchar" MaxLength="100" />
-          <Property Name="TeamId" Type="int" Nullable="false" />
+          <Property Name="Id" Nullable="false" StoreGeneratedPattern="Identity" Type="int" />
+          <Property Name="Name" MaxLength="100" Type="nvarchar" />
+          <Property Name="TeamId" Nullable="false" Type="int" />
         </EntityType>
         <EntityType Name="Projects">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="Id" Nullable="false" StoreGeneratedPattern="Identity" Type="int" />
+          <Property Name="Name" MaxLength="50" Type="nvarchar" />
           <Property Name="Description" Type="nvarchar(max)" />
         </EntityType>
         <EntityType Name="Teams">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Name" Type="nvarchar" MaxLength="50" />
-          <Property Name="ProjectId" Type="int" Nullable="false" />
+          <Property Name="Id" Nullable="false" StoreGeneratedPattern="Identity" Type="int" />
+          <Property Name="Name" MaxLength="50" Type="nvarchar" />
+          <Property Name="ProjectId" Nullable="false" Type="int" />
         </EntityType>
         <Association Name="ContactInfos_Employee_FK">
-          <End Role="Employees" Type="Self.Employees" Multiplicity="1" />
-          <End Role="ContactInfos" Type="Self.ContactInfos" Multiplicity="0..1" />
+          <End Type="Self.Employees" Multiplicity="1" Role="Employees" />
+          <End Type="Self.ContactInfos" Multiplicity="0..1" Role="ContactInfos" />
           <ReferentialConstraint>
             <Principal Role="Employees">
               <PropertyRef Name="Id" />
@@ -50,8 +50,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="Employee_Teams_FK">
-          <End Role="Teams" Type="Self.Teams" Multiplicity="1" />
-          <End Role="Employees" Type="Self.Employees" Multiplicity="*" />
+          <End Type="Self.Teams" Multiplicity="1" Role="Teams" />
+          <End Type="Self.Employees" Multiplicity="*" Role="Employees" />
           <ReferentialConstraint>
             <Principal Role="Teams">
               <PropertyRef Name="Id" />
@@ -62,8 +62,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="Teams_Projects_FK">
-          <End Role="Projects" Type="Self.Projects" Multiplicity="1" />
-          <End Role="Teams" Type="Self.Teams" Multiplicity="*" />
+          <End Type="Self.Projects" Multiplicity="1" Role="Projects" />
+          <End Type="Self.Teams" Multiplicity="*" Role="Teams" />
           <ReferentialConstraint>
             <Principal Role="Projects">
               <PropertyRef Name="Id" />
@@ -79,16 +79,16 @@
           <EntitySet Name="Projects" EntityType="Self.Projects" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Teams" EntityType="Self.Teams" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="ContactInfos_Employee_FK" Association="Self.ContactInfos_Employee_FK">
-            <End Role="Employees" EntitySet="Employees" />
-            <End Role="ContactInfos" EntitySet="ContactInfos" />
+            <End EntitySet="Employees" Role="Employees" />
+            <End EntitySet="ContactInfos" Role="ContactInfos" />
           </AssociationSet>
           <AssociationSet Name="Employee_Teams_FK" Association="Self.Employee_Teams_FK">
-            <End Role="Teams" EntitySet="Teams" />
-            <End Role="Employees" EntitySet="Employees" />
+            <End EntitySet="Teams" Role="Teams" />
+            <End EntitySet="Employees" Role="Employees" />
           </AssociationSet>
           <AssociationSet Name="Teams_Projects_FK" Association="Self.Teams_Projects_FK">
-            <End Role="Projects" EntitySet="Projects" />
-            <End Role="Teams" EntitySet="Teams" />
+            <End EntitySet="Projects" Role="Projects" />
+            <End EntitySet="Teams" Role="Teams" />
           </AssociationSet>
         </EntityContainer>
       </Schema></edmx:StorageModels>

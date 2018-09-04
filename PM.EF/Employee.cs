@@ -11,13 +11,13 @@ namespace PM.EF
 {
     using System;
     using System.Collections.Generic;
-
+    
     public partial class Employee
     {
         public int Id { get; set; }
         //public string Name { get; set; }
         public int TeamId { get; set; }
-
+    
         public virtual ContactInfo ContactInfo { get; set; }
         public virtual Team Team { get; set; }
     }
