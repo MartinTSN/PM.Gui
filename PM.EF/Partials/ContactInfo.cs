@@ -71,6 +71,8 @@ namespace PM.EF
                 phone = value;
             }
         }
+        public static ContactInfo Default
+        => new ContactInfo("","");
         #endregion
     }
 }

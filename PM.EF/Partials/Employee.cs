@@ -15,6 +15,7 @@ namespace PM.EF
         public Employee(string name)
         {
             Name = name;
+            ContactInfo = ContactInfo.Default;
         }
         #endregion
         #region Properties
