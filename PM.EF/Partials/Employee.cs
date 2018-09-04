@@ -6,12 +6,26 @@ using System.Threading.Tasks;
 
 namespace PM.EF
 {
+    /// <summary>
+    /// A Partial class Employee that contains Fields, Constructors and Properties
+    /// </summary>
+    /// <remarks>Is made of a String name</remarks>
     public partial class Employee
     {
         #region Fields
+        /// <summary>
+        /// Protected Field name
+        /// </summary>
         protected string name;
         #endregion
         #region Constructors
+        /// <summary>
+        /// The default constructor
+        /// </summary>
+        /// <remarks>Sets ContactInfo to default</remarks>
+        /// <param name="name">A string Name</param>
+        /// <exception cref="ArgumentNullException">Thrown when a value is null</exception>
+        /// <exception cref="ArgumentOutOfRangeException">Thrown when a value is out of range (2-100)</exception>
         public Employee(string name)
         {
             Name = name;
@@ -19,6 +33,11 @@ namespace PM.EF
         }
         #endregion
         #region Properties
+        /// <summary>
+        /// The property Name
+        /// </summary>
+        /// <exception cref="ArgumentNullException">Thrown when the value is null</exception>
+        /// <exception cref="ArgumentOutOfRangeException">Thrown when the value is out of range (2-100)</exception>
         public virtual string Name
         {
             get

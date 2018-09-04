@@ -6,13 +6,31 @@ using System.Threading.Tasks;
 
 namespace PM.EF
 {
+    /// <summary>
+    /// A Partial class Contactinfo that contains Fields, Constructors and Properties
+    /// </summary>
+    /// <remarks>Is made out of a String email and a string phone(number)</remarks>
     public partial class ContactInfo
     {
         #region Fields
+        /// <summary>
+        /// A protected string email
+        /// </summary>
         protected string email;
+        /// <summary>
+        /// A protected string phone(number)
+        /// </summary>
         protected string phone;
         #endregion
         #region Constructors
+        /// <summary>
+        /// The Default constructor
+        /// </summary>
+        /// <param name="email">A string email</param>
+        /// <param name="phone">A string phone(number)</param>
+        /// <exception cref="ArgumentNullException">Thrown when A value is null</exception>
+        /// <exception cref="ArgumentOutOfRangeException">Thrown when A value is out of range</exception>
+        /// <exception cref="FormatException">Thrown when A value is formatted incorrectly</exception>
         public ContactInfo(string email, string phone)
         {
             Email = email;
@@ -20,6 +38,12 @@ namespace PM.EF
         }
         #endregion
         #region Properties
+        /// <summary>
+        /// A property string Email
+        /// </summary>
+        /// <exception cref="ArgumentNullException">Thrown when the value is null</exception>
+        /// <exception cref="ArgumentOutOfRangeException">Thrown when the value is out of range (10-50)</exception>
+        /// <exception cref="FormatException">Thrown when the value is formatted incorrectly</exception>
         public virtual string Email
         {
             get
@@ -52,6 +76,11 @@ namespace PM.EF
                 email = value;
             }
         }
+        /// <summary>
+        /// A property String Phone(number)
+        /// </summary>
+        /// <exception cref="ArgumentNullException">Thrown when the value is null</exception>
+        /// <exception cref="ArgumentOutOfRangeException">Thrown when the value is out of range (8-25)</exception>
         public virtual string Phone
         {
             get
@@ -71,8 +100,11 @@ namespace PM.EF
                 phone = value;
             }
         }
+        /// <summary>
+        /// A property ContactInfo Default
+        /// </summary>
         public static ContactInfo Default
-        => new ContactInfo("","");
+        => new ContactInfo("", "");
         #endregion
     }
 }
