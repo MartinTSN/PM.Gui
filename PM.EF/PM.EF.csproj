@@ -82,6 +82,9 @@
     <Compile Include="Team.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
+    <Compile Include="TeamEmployee.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.Config" />

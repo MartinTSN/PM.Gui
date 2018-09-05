@@ -20,7 +20,7 @@ namespace PM.EF
         /// <summary>
         /// Protected ICollection Employee employees
         /// </summary>
-        protected ICollection<Employee> employees;
+        protected ICollection<TeamEmployee> teamEmployees;
         #endregion
         #region Constructors
         /// <summary>
@@ -31,7 +31,7 @@ namespace PM.EF
         /// <exception cref="ArgumentNullException">Thrown when a value is null</exception>
         /// <exception cref="ArgumentOutOfRangeException">Thrown when a value is out of range (2-50)</exception>
         public Team(string name)
-            : this(name, new List<Employee>(0))
+            : this(name, new List<TeamEmployee>(0))
         {
 
         }
@@ -42,10 +42,10 @@ namespace PM.EF
         /// <param name="employees">A ICollection Employee employees</param>
         /// <exception cref="ArgumentNullException">Thrown when a value is null</exception>
         /// <exception cref="ArgumentOutOfRangeException">Thrown when a value is out of range (2-50)</exception>
-        public Team(string name, ICollection<Employee> employees)
+        public Team(string name, ICollection<TeamEmployee> teamEmployees)
         {
             Name = name;
-            Employees = employees;
+            TeamEmployees = teamEmployees;
         }
         #endregion
         #region Properties
@@ -74,16 +74,16 @@ namespace PM.EF
         /// The ICollection Employees
         /// </summary>
         /// <exception cref="ArgumentNullException">Thrown when value is null</exception>
-        public virtual ICollection<Employee> Employees
+        public virtual ICollection<TeamEmployee> TeamEmployees
         {
-            get => employees;
+            get => teamEmployees;
             set
             {
                 if (value is null)
                 {
                     throw new ArgumentNullException("The employees must be set");
                 }
-                employees = value;
+                teamEmployees = value;
             }
         }
         #endregion

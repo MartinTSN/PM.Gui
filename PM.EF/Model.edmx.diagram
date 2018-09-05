@@ -4,14 +4,16 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="ab2ab23d296d401cb72e1e50079ada19" Name="Diagram1">
-        <EntityTypeShape EntityType="ProjectManagementDBModel.ContactInfo" Width="1.5" PointX="10.625" PointY="2.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="ProjectManagementDBModel.Employee" Width="1.5" PointX="8.25" PointY="2.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="ProjectManagementDBModel.Project" Width="1.5" PointX="3.125" PointY="3" IsExpanded="true" />
-        <EntityTypeShape EntityType="ProjectManagementDBModel.Team" Width="1.5" PointX="5.625" PointY="2.875" IsExpanded="true" />
+      <Diagram DiagramId="617077dd18c747f3a91876cd18058688" Name="Diagram1">
+        <EntityTypeShape EntityType="ProjectManagementDBModel.ContactInfo" Width="1.5" PointX="0.625" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProjectManagementDBModel.Employee" Width="1.5" PointX="3.25" PointY="4.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProjectManagementDBModel.Project" Width="1.5" PointX="11.375" PointY="4.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProjectManagementDBModel.Team" Width="1.5" PointX="8.25" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProjectManagementDBModel.TeamEmployee" Width="1.5" PointX="5.875" PointY="4.875" IsExpanded="true" />
         <AssociationConnector Association="ProjectManagementDBModel.ContactInfos_Employee_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="ProjectManagementDBModel.FK_TeamEmployee_Employees" ManuallyRouted="false" />
         <AssociationConnector Association="ProjectManagementDBModel.Teams_Projects_FK" ManuallyRouted="false" />
-        <AssociationConnector Association="ProjectManagementDBModel.TeamEmployee" ManuallyRouted="false" />
+        <AssociationConnector Association="ProjectManagementDBModel.FK_TeamEmployee_Teams" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

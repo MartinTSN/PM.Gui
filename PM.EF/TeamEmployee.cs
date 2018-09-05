@@ -12,12 +12,13 @@ namespace PM.EF
     using System;
     using System.Collections.Generic;
     
-    public partial class ContactInfo
+    public partial class TeamEmployee
     {
-        public int Id { get; set; }
-        //public string Email { get; set; }
-        //public string Phone { get; set; }
+        public int TeamId { get; set; }
+        public int EmployeeId { get; set; }
+        public System.DateTime StartDate { get; set; }
     
         public virtual Employee Employee { get; set; }
+        public virtual Team Team { get; set; }
     }
 }

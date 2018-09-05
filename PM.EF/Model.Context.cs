@@ -29,5 +29,6 @@ namespace PM.EF
         public virtual DbSet<Employee> Employees { get; set; }
         public virtual DbSet<Project> Projects { get; set; }
         public virtual DbSet<Team> Teams { get; set; }
+        public virtual DbSet<TeamEmployee> TeamEmployees { get; set; }
     }
 }
