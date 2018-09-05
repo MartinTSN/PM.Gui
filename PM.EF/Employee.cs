@@ -11,7 +11,7 @@ namespace PM.EF
 {
     using System;
     using System.Collections.Generic;
-    
+
     public partial class Employee
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -19,11 +19,11 @@ namespace PM.EF
         {
             this.TeamEmployees = new HashSet<TeamEmployee>();
         }
-    
+
         public int Id { get; set; }
         //public string Name { get; set; }
         public Nullable<int> TeamId { get; set; }
-    
+
         public virtual ContactInfo ContactInfo { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<TeamEmployee> TeamEmployees { get; set; }
